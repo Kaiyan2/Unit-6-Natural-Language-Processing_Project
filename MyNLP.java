@@ -32,7 +32,8 @@ public class MyNLP {
     
     // Add each word from the array to the list
     for (String word : userArray) {
-      wordList.add(word); // Add each word to the list
+      // Add each word to the list
+      wordList.add(word); 
     }
     
     return wordList; // Return the list of words
@@ -46,13 +47,15 @@ public class MyNLP {
    * @return A cleaned string with no punctuation, where all letters are in lowercase.
    */
   public String removePunctuation(String inputString) {
-    String cleanedString = ""; // Initialize an empty string to store the cleaned result
+    // Initialize an empty string to store the cleaned result
+    String cleanedString = ""; 
 
-    // Loop through each character in the input string
+    // Traverse through every character in the given string
     for (int i = 0; i < inputString.length(); i++) {
-      char currentChar = inputString.charAt(i); // Get the character at position i
+      // Get the character at position i
+      char currentChar = inputString.charAt(i); 
       
-      // Check if the character is a letter, number, or space
+      // Checks if the string is a letter, number, or space
       if ((currentChar >= 'a' && currentChar <= 'z') || 
           (currentChar >= 'A' && currentChar <= 'Z') || 
           (currentChar >= '0' && currentChar <= '9') || 
@@ -81,7 +84,8 @@ public class MyNLP {
       // Check if the word is already in the FrequentWords list
       for (int i = 0; i < FrequentWords.size(); i++) {
         if (FrequentWords.get(i).equals(currentWord)) {
-          count.set(i, count.get(i) + 1); // Increment the count for the word
+          // Increment the count for the word
+          count.set(i, count.get(i) + 1);
           found = true;
         }
       }
@@ -114,7 +118,8 @@ public class MyNLP {
     // Print only words that appear more than once
     for (int i = 0; i < FrequentWords.size(); i++) {
         if (count.get(i) > 1) {
-            System.out.println(FrequentWords.get(i)); // Print only the word
+          // Print only the word
+            System.out.println(FrequentWords.get(i));
         }
     }
     System.out.println(" ");    
@@ -123,11 +128,13 @@ public class MyNLP {
     System.out.println("This is how common your words occur in your text:");
     for (int i = 0; i < FrequentWords.size(); i++) {
         if (count.get(i) > 1) {
-        System.out.println(FrequentWords.get(i) + ": " + count.get(i)); // Display word and its count
+          // Display word and its count
+        System.out.println(FrequentWords.get(i) + ": " + count.get(i)); 
     }
     }
     System.out.println(" ");
-    
-    input.close(); // Close the scanner to free resources
+
+    // Close the scanner to free resources
+    input.close(); 
   }
 }
